@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Calculus Practice</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Serifa®" rel="stylesheet" type="text/css" /> -->
+    
+    <!-- import the webpage's javascript file -->
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script"  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js" integrity="sha512-SewEag0kt1xsJdbfAXgLyLvYXeAoGEla4M6JSitT6ocJVI+VeUbFXkgrbloNn4cVgq46caRf31un2eoalq6YOw==" crossorigin="anonymous"></script>
+    <script src="question.js" defer></script>
+  </head>  
+  <body>
+    <div class = "topnav">
+      <a class="active">Problem Sets</a> 
+      <a href="areas.html">Areas</a> 
+    </div>
+    <div>
+      <div class = "header">
+        <h1 id = "title">Calculus Practice</h1>
+      </div>
+        <div class = "nav">
+          <h2>
+            navigation
+          </h2>
+          </ul>
+          <label for="ib">IB Test Questions: </label><input type = "checkbox" id="ib" class="checkbox" checked><br>
+          <label for="ap">AP Test Questions: </label><input type = "checkbox" id="ap" class="checkbox" checked><br>
+          
+          <label for="focusArea">Focus: </label><select id="focusArea">
+            <option value="none">none</option>
+          </select>
+          <br>
+          <input type = "button" id="newQuestion" value="new question" class="newQuestion"> <label for="newQuestion" id="newQuestionLabel" class="tiny"></label>
+        </div>
+        <div class = "right-nav">
+          <h2 id="test-text">
+            main
+          </h2>
+        </div>
+      
+    </div>
+    <div>
+      <img src="./images/2017H2-8.png" id="image" class="image" height="200px">
+      <p id = "pitch" class = "formulae">
+        The inside of a funnel of height aa inches has circular cross-sections as shown in the image above. At height <var>h</var>, the radius of the funnel is given by \(r={{qq + h^2} \over cc}\) where \(0 \le h \le a \)
+      </p>
+      
+
+
+      
+
+
+      <div class = "questions">
+        <p id = "a-demand" class = "formulae a demand">
+          blah
+        </p>
+        <p id = "a-question" class = "formulae a question">
+          (a) Find the average value of the radius of the funnel <var>s</var>
+        </p>
+        <label for="a-answer-input" class = "a label" id = "a-answer-input-text"></label> <input type="text" id="a-answer-input" class = "a"> <input type = "button" value = "submit" id = "a-submit" class = "a button">
+        
+        <p id = "a-answer" class = "formulae a answer">
+            The answer is \({{qq \over {cc}} + {aa^2 \over {3*cc}}} = {finalAnswer}\) inches
+        </p>
+
+        <div id = "a-explanation">
+
+        </div>
+
+        <p id = "b-demand" class = "formulae b demand">
+          blah
+        </p>
+
+        <p id = "b-question" class = "formulae b question">
+          (b) Find the volume of the funnel
+        </p>
+        <label for="b-answer-input" class = "b label" id = "b-answer-input-text"></label> <input type="text" id="b-answer-input" class = "b"> <input type = "button" value = "submit" id = "b-submit" class = "b button">
+
+        <p id = "b-answer" class = "formulae b answer">
+          The answer is \({\pi \over cc^2} * (aa \times qq + {aa^5 \over 5} + {aa^3 \over 3})  = {finalAnswer}\) inches \(^3\)
+          
+        </p>
+
+        <p id = "c-demand" class = "formulae c demand">
+          The funnel contains a liquid that is draining from the bottom. at the instant when the liquid is \(h = d_d \) inches, the radius of the surface of the liquid is decreasing at a rate of \(1 \over ee \) inch per second.
+        </p>
+
+        <p id = "c-question" class = "formulae c question">
+          (c) At this instant, what is the rate of change of the height of the liquid with respect to time?
+        </p>
+        <label for="c-answer-input" class = "c label" id = "c-answer-input-text"></label> <input type="text" id="c-answer-input" class = "c"> <input type = "button" value = "submit" id = "c-submit" class = "c button">
+
+        <p id = "c-answer" class = "formulae c answer">
+          
+          The answer is \({-cc \over {2 (ee \times d_d)}} = {simplifiedAnswer} = {finalAnswer}\) inches per second
+        </p>
+
+        <p id = "d-demand" class = "formulae d demand">
+          d demand
+        </p>
+
+        <p id = "d-question" class = "formulae d question">
+          (d) ___
+        </p>
+        <label for="d-answer-input" class = "d label" id = "d-answer-input-text"></label> <input type="text" id="d-answer-input" class = "d"> <input type = "button" value = "submit" id = "d-submit" class = "d button">
+
+        <p id = "d-answer" class = "formulae d answer">
+          
+          danswer
+        </p>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+  </body>
+</html>

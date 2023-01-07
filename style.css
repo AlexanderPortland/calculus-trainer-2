@@ -1,0 +1,99 @@
+/* CSS files add styling rules to your content */
+
+  body {
+    font-family: serif, 'Times New Roman', Times, serif;
+    margin: 2em;
+    font-size: 22px;
+  }
+  
+  h1 {
+    font-style: italic;
+    color: #373fff;
+    font-family: Roboto;
+  }
+  
+  .questions{
+    margin-left: 60px;
+    padding-right: 60px;
+  }
+
+  .demand{
+    margin-top: 60px;
+  }
+  .answer{
+    margin-left: 50px;
+    padding-left: 10px;
+    //padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 2.5;
+    border-style: groove;
+  }
+
+  .button{
+    border-radius: 3px;
+    border-width: 1px;
+  }
+  
+  .nav {
+    width: 25%;
+    float: right;
+    background-color: bisque;
+    padding-left: 2%;
+    padding-right: 3%;
+  }
+
+  .image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checkbox{
+    width: 15px;
+    height: 15px;
+  }
+
+  .newQuestion{
+    margin-bottom: 20px;
+  }
+  
+  .right-nav {
+    width: 70%;
+    /*float: right;*/
+  }
+
+  .areaList {
+    font-size: larger;
+  }
+  .leftFloat{
+    float: right;
+  }
+
+  .topnav{
+    background-color:grey;
+    overflow: hidden;
+  }
+
+  .topnav a {
+    float: left;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: rgb(125, 162, 255);
+    color: black;
+  }
+
+  .topnav a.active{
+    background-color: #373fff;
+    color: white;
+  }
+
+  .tiny{
+    font-size: 20px;
+  }
