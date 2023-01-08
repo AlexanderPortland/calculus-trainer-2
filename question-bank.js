@@ -930,7 +930,7 @@ function ShowNewQuestion(question){
 let questions = new Array();
 
 //#region AP Related Rates Questions
-function sixteenBCfive(){
+function q1(){
     let subQs = new Array();
     subQs.push(new SubQuestion(
         "8.1",
@@ -966,7 +966,7 @@ function sixteenBCfive(){
     return a;
 }
 
-function sixteenBCfour(){
+function q2(){
     subQs = new Array();
     newQ = new SubQuestion(
         "3.2",
@@ -1112,7 +1112,7 @@ function q4(){
     b = new SubQuestion(
         "4.5",
         "",
-        "(a) Find the rate of change of the volume of water in the barrel with respect to time when the height of the water is a_a feet. Indicate units of measure.",
+        "(a) find the rate of change of the volume of water in the barrel with respect to time when the height of the water is a_a feet. Indicate units of measure.",
         "\\pi * ccc^2 * ({-{1 \\over aaa}\\sqrt{a_a}})",
         "\\({dV \\over dt} = \\pi r^2 \\left(dh \\over dt \\right)\\) &nbsp; [1 point] <br> \\({\\left[dV \\over dt \\right]_{h=a_a}} = \\pi * ccc^2 \\left[dh \\over dt \\right]_{h=a_a}\\) <br> \\(= \\pi * ccc^2 \\left({-{1 \\over aaa}\\sqrt{a_a}}\\right)= e_e\\) feet\\(^3\\)/second &nbsp; [1 point]"
     );
@@ -1123,7 +1123,7 @@ function q4(){
     var complexQuestion = new SubQuestion(
         "5.3",
         "",
-        "(b) When the height of the water is b_b feet, is the rate of change of the height of the water with respect to time increasing or decreasing? Explain your reasoning (but don't type it in).",
+        "(b) when the height of the water is b_b feet, is the rate of change of the height of the water with respect to time increasing or decreasing? Explain your reasoning.",
         "0",
         ""
     );
@@ -1138,8 +1138,7 @@ function q4(){
             complexQuestion.steps = "\\({d^2h \\over dh^2} = -{1 \\over 2(aaa) \\sqrt{h}} * {dh \\over dt}\\) &nbsp; [1 point] <br> \\(= -{1 \\over e_e \\sqrt{h}} * {-{1\\over aaa} \\sqrt{h}}\\) &nbsp; [1 point] <br> \\(= {1 \\over e_e (aaa)}\\) <br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} > 0\\) for \\(h > 0\\), the rate of change of the height is <b>increasing</b> when the height of the water is b_b feet. &nbsp; [1 point]"
         } else if (secondDerivative < 0){
             complexQuestion.answer = "decreasing";
-            //complexQuestion.f = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
-            complexQuestion.steps = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
+            complexQuestion.f = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
         } else {
             complexQuestion.answer = "oh no oopsie";
         }
@@ -1150,7 +1149,7 @@ function q4(){
         "",
         "(c) At time \\(t = 0\\) seconds, the height of the water is a_a feet. Use separation of variables to find an expression for \\(h\\) in terms of \\(t\\)",
         "0",
-        "\\({dh \\over \\sqrt h } = - {1 \\over aaa} dt\\) &nbsp; [1 point] <br> \\( \\int{dh \\over \\sqrt h} = \\int- {1 \\over aaa} dt\\) <br> \\( 2\\sqrt{h} = -{1 \\over aaa} t + C\\) &nbsp; [1 point] <br> \\( 2\\sqrt{a_a} = -{1 \\over aaa}\\left(0\\right) + C => C = 2\\sqrt{a_a}\\) &nbsp; [1 point] <br> \\( 2\\sqrt{h} = -{1 \\over aaa}t + 2\\sqrt{a_a}\\) <br> \\(h(t) = \\left(-{1 \\over 2*aaa}t + \\sqrt{a_a}\\right)^2\\) &nbsp; [1 point]"
+        "\\({dh \\over \\sqrt h } = - {1 \\over aaa} dt\\) &nbsp; [1 point] <br> \\(\\left \\int{dh \\over \\sqrt h } = \\int- {1 \\over aaa} dt\\)"
     ));
     let a = new QuestionForm(
         1,
@@ -1398,11 +1397,11 @@ function q9(){
 }
 
 //Completely finished
-//questions.push(sixteenBCfive());
-//questions.push(sixteenBCfour());
+questions.push(q1());
+questions.push(q2());
 
 //Largely finished
-questions.push(q4());
+//questions.push(q3());
 
 
 //Working on
