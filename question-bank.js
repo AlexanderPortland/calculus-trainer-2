@@ -457,18 +457,6 @@ function Random (tingz){
 
 var storedPastQuestions = 6;
 let areas = new Array();
-//areas.push(new Area(
-//    "3.2",
-//    [1, 1, 1, 1],
-//    0,
-//    0
-//));
-//areas.push(new Area(
-//    "4.7",
-//    [0, 1, 0, 1],
-//    0,
-//    0
-//));
 
 function PushLocalAreas(){
     //initializes local storage if it does not exist

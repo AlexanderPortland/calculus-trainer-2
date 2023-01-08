@@ -1114,6 +1114,7 @@ function q4(){
         "",
         "(a) Find the rate of change of the volume of water in the barrel with respect to time when the height of the water is a_a feet. Indicate units of measure.",
         "\\pi * ccc^2 * ({-{1 \\over aaa}\\sqrt{a_a}})",
+        
         "\\({dV \\over dt} = \\pi r^2 \\left(dh \\over dt \\right)\\) &nbsp; [1 point] <br> \\({\\left[dV \\over dt \\right]_{h=a_a}} = \\pi * ccc^2 \\left[dh \\over dt \\right]_{h=a_a}\\) <br> \\(= \\pi * ccc^2 \\left({-{1 \\over aaa}\\sqrt{a_a}}\\right)= e_e\\) feet\\(^3\\)/second &nbsp; [1 point]"
     );
     b.FixAnswerText = function() {
@@ -1124,7 +1125,7 @@ function q4(){
         "5.3",
         "",
         "(b) When the height of the water is b_b feet, is the rate of change of the height of the water with respect to time increasing or decreasing? Explain your reasoning (but don't type it in).",
-        "0",
+        "1",
         ""
     );
     complexQuestion.FixAnswerText = function (){
@@ -1138,8 +1139,9 @@ function q4(){
             complexQuestion.steps = "\\({d^2h \\over dh^2} = -{1 \\over 2(aaa) \\sqrt{h}} * {dh \\over dt}\\) &nbsp; [1 point] <br> \\(= -{1 \\over e_e \\sqrt{h}} * {-{1\\over aaa} \\sqrt{h}}\\) &nbsp; [1 point] <br> \\(= {1 \\over e_e (aaa)}\\) <br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} > 0\\) for \\(h > 0\\), the rate of change of the height is <b>increasing</b> when the height of the water is b_b feet. &nbsp; [1 point]"
         } else if (secondDerivative < 0){
             complexQuestion.answer = "decreasing";
-            //complexQuestion.f = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
-            complexQuestion.steps = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
+            //should never happen bc of question wording
+            complexQuestion.f = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
+            //complexQuestion.steps = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
         } else {
             complexQuestion.answer = "oh no oopsie";
         }
@@ -1164,6 +1166,72 @@ function q4(){
     );
     a.FixAnswerText = function (){
         a.e = a.c * 2;
+    }
+    return a;
+}
+
+
+function q101(){
+    //not finished yet
+    subQs = new Array();
+    b = new SubQuestion(
+        "",
+        "",
+        "(a) How many fish enter the lake over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)? Give your answer to the nearest whole number.",
+        "a_a",
+        "\\(\\int_0^ppp{E(t) \\text{ } dt} = \\int_0^ppp\\left(www0 + 15 \\sin\\left(\\pi t \\over 6\\right)\\right) dt\\) &nbsp; [1 point] <br> \\(\\int_0^ppp\\left.{E(t) \\text{ } dt} = www0x - {{ttt (15) \\cos\\left({\\pi x} \\over ttt\\right)} \\over \\pi}\\right\\rvert_0^ppp \\) <br> \\(= www0(ppp) - {{t_t \\cos\\left({ppp\\pi} \\over ttt\\right)} \\over \\pi} + {{t_t \\cos\\left(0\\right)} \\over \\pi} = e_e\\) &nbsp; [1 point] <br> To the nearest whole number, a_a fish enter the lake from midnight to ppp A.M."
+    );
+    b.FixAnswerText = function() {
+        b.t = b.Solve("ttt * 15");
+        b.w = b.Solve("www0 * 15");
+        b.e = b.Solve("www0(ppp) - {{t_t \\cos({ppp\\pi} \\over ttt)} \\over \\pi} + {{t_t \\cos(0)} \\over \\pi}");
+        b.a = Math.round(b.e);
+    }
+    subQs.push(b);
+    var complexQuestion = new SubQuestion(
+        "",
+        "",
+        "(b) What is the average number of fish that leave the lake per hour over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)?",
+        "e_e",
+        "\\({1\\over ppp - 0} \\int_0^ppp{L(t) \\text{ } dt} = {1\\over ppp - 0} \\int_0^ppp({aaa + 2^{0.qqqt}})dt = e_e\\) &nbsp; [1 point] <br> The average number of fish that leave the lake per hour from midnight to ppp A.M. is e_e fish per hour. &nbsp; [1 point]"
+    );
+    complexQuestion.FixAnswerText = function() {
+        //b.e = b.Solve("{2^{0.qqqt} \\over {0.qqq * log(2, 2.718)}} + 4*ppp");
+        //complexQuestion.e = complexQuestion.Solve("log(2, 2.718)");
+        //complexQuestion.e = complexQuestion.Solve("(pow(2, 0.qqqt) / (0.qqq * log(2, 2.718)))");
+        complexQuestion.e = complexQuestion.Solve("(pow(2, 0.qqq * ppp) / (0.qqq * log(2, 2.718)) + aaa*ppp - (1 / (0.qqq * log(2, 2.718)))) / ppp");
+    }
+    subQs.push(complexQuestion);
+    subQs.push(new SubQuestion(
+        "",
+        "",
+        "(c) At what time \\(t\\) for \\(0 \\le t \\le jjj\\), is the greatest number of fish in the lake? Justify your answer.",
+        "0",
+        ""
+    ));
+    subQs.push(new SubQuestion(
+        "",
+        "",
+        "(d) Is the rate of change in the number of fish in the lake increasing or decreasing at ppp A.M. \\((t = ppp)\\)? Explain your reasoning.",
+        "0",
+        ""
+    ));
+    let a = new QuestionForm(
+        1,
+        "AP Calculus BC 2019 - Question 1",
+        false,
+        "Geometry",
+        "Fish enter a lake at a rate modelled by the function \\(E\\) given by \\(E(t) = www0 + 15 \\sin\\left(\\pi t \\over ttt\\right)\\). Fish leave the lake at a rate modeled by the function \\(L\\) given by \\(L(t) = aaa + 2^{0.qqqt}\\). Both \\(E(t)\\) and \\(L(t)\\) are measured in fish per hour, and \\(t\\) is measured in hours since midnight \\((t = 0)\\).",
+        null,
+        subQs,
+        ""
+    );
+    a.FixAnswerText = function (){
+        a.j = parseInt(a.p) + Math.floor(Math.random() * 3) + 1;
+        a.j = a.j.toString();
+        a.t = 6;
+        if (Math.random() > 0.5) a.t = 3;
+        a.q = (Math.floor(Math.random() * 4) + 1).toString();
     }
     return a;
 }
@@ -1400,9 +1468,10 @@ function q9(){
 //Completely finished
 //questions.push(sixteenBCfive());
 //questions.push(sixteenBCfour());
+//questions.push(q4());
 
 //Largely finished
-questions.push(q4());
+questions.push(q101());
 
 
 //Working on
