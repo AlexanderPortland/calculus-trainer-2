@@ -1,924 +1,7 @@
-
-class SubQuestion{
-    constructor(_unit, _demand, _question, _answerFormula, _steps){
-        this.unit = _unit;
-        this.demand = _demand;
-        this.question = _question;
-        this.answerFormula = _answerFormula;
-        this.steps = _steps;
-        this.finalAnswer;
-        this.answer;
-
-        this.localVars;
-        this.a;
-        this.q;
-        this.c;
-        this.d;
-        this.e;
-        this.parentQuestion;
-        
-        //this.simplifiedAnswer = this.SubValues(this.answerFormula);;
-    }
-
-    NewValues(){
-        this.a = (Math.floor(Math.random() * 9) + 1);
-        this.b = (Math.floor(Math.random() * 9) + 1);
-        this.d = (Math.floor(Math.random() * 9) + 1);
-        this.q = (Math.floor(Math.random() * 9) + 1);
-        this.v = (Math.floor(Math.random() * 5) + 1);
-
-        this.e = (Math.floor(Math.random() * 8) + 2);
-        this.p = (Math.floor(Math.random() * 8) + 2);
-        this.c = (Math.floor(Math.random() * 8) + 2);
-
-        this.f = (Math.floor(Math.random() * 8) + 2);
-        if (Math.random() >= 0.5) this.f = 0 - this.f;
-        this.g = (Math.floor(Math.random() * 8) + 2);
-        if (Math.random() >= 0.5) this.g = 0 - this.g;
-        this.n = (Math.floor(Math.random() * 5) + 1);
-        if (Math.random() >= 0.5) this.n = 0 - this.n;
-        
-        this.r = (Math.floor(Math.random() * this.a) + 1);
-        this.s = (Math.floor(Math.random() * this.r) + 1);
-        this.t = (Math.floor(Math.random() * this.s) + 1);
-        
-        this.w = (Math.floor(Math.random() * 3) + 2);
-        this.l = 2*(Math.floor(Math.random() * 3) + 1);
-
-        this.a = this.a.toString();
-        this.b = this.b.toString();
-        this.c = this.c.toString();
-        this.d = this.d.toString();
-        this.e = this.e.toString();
-        this.f = this.f.toString();
-        this.g = this.g.toString();
-        this.l = this.l.toString();
-        this.q = this.q.toString();
-        this.r = this.r.toString();
-        this.s = this.s.toString();
-        this.t = this.t.toString();
-        this.w = this.w.toString();
-    }
-
-    SubValues(stringToSub){
-        var value = stringToSub;
-
-        value = value.replace(/a_a/g,this.a);
-        value = value.replace(/b_b/g,this.b);
-        value = value.replace(/c_c/g,this.c);
-        value = value.replace(/d_d/g,this.d);
-        value = value.replace(/e_e/g,this.e);
-        value = value.replace(/f_f/g,this.f);
-        value = value.replace(/g_g/g,this.g);
-        value = value.replace(/l_l/g,this.l);
-        value = value.replace(/n_n/g,this.n);
-        value = value.replace(/p_p/g,this.p);
-        value = value.replace(/r_r/g,this.r);
-        value = value.replace(/s_s/g,this.s);
-        value = value.replace(/t_t/g,this.t);
-        value = value.replace(/q_q/g,this.q);
-        value = value.replace(/v_v/g,this.v);
-        value = value.replace(/w_w/g,this.w);
-        value = value.replace(/=>/g, "\\(\\rightarrow\\)");
-        value = value.replace(/\+ -/g,"- ");
-        value = value.replace(/\+-/g,"-");
-        value = value.replace(/-\+/g,"-");
-        value = value.replace(/- \+/g,"-");
-        value = value.replace(/1x/g,"x");
-        value = value.replace(/1y/g,"y");
-        
-        value = value.replace(/2x/g,"2*x");
-        value = value.replace(/3x/g,"3*x");
-        value = value.replace(/4x/g,"4*x");
-        value = value.replace(/5x/g,"5*x");
-        value = value.replace(/6x/g,"6*x");
-        value = value.replace(/7x/g,"7*x");
-        value = value.replace(/8x/g,"8*x");
-        value = value.replace(/9x/g,"9*x");
-        value = value.replace(/10x/g,"10*x");
-
-        value = value.replace(/11x/g,"11*x");
-        value = value.replace(/12x/g,"12*x");
-        value = value.replace(/13x/g,"13*x");
-        value = value.replace(/14x/g,"14*x");
-        value = value.replace(/15x/g,"15*x");
-        value = value.replace(/16x/g,"16*x");
-        value = value.replace(/17x/g,"17*x");
-        value = value.replace(/18x/g,"18*x");
-        value = value.replace(/19x/g,"19*x");
-        value = value.replace(/20x/g,"20*x");
-        
-        value = value.replace(/21x/g,"21*x");
-        value = value.replace(/22x/g,"22*x");
-        value = value.replace(/23x/g,"23*x");
-        value = value.replace(/24x/g,"24*x");
-        value = value.replace(/25x/g,"25*x");
-        value = value.replace(/26x/g,"26*x");
-        value = value.replace(/27x/g,"27*x");
-        value = value.replace(/28x/g,"28*x");
-        value = value.replace(/29x/g,"29*x");
-
-        value = value.replace(/2y/g,"2*y");
-        value = value.replace(/3y/g,"3*y");
-        value = value.replace(/4y/g,"4*y");
-        value = value.replace(/5y/g,"5*y");
-        value = value.replace(/6y/g,"6*y");
-        value = value.replace(/7y/g,"7*y");
-        value = value.replace(/8y/g,"8*y");
-        value = value.replace(/9y/g,"9*y");
-        value = value.replace(/10y/g,"10*y");
-        value = value.replace(/11y/g,"11*y");
-        value = value.replace(/12y/g,"12*y");
-        value = value.replace(/13y/g,"13*y");
-        value = value.replace(/14y/g,"14*y");
-        value = value.replace(/15y/g,"15*y");
-        value = value.replace(/16y/g,"16*y");
-        value = value.replace(/17y/g,"17*y");
-        value = value.replace(/18y/g,"18*y");
-        value = value.replace(/19y/g,"19*y");
-        value = value.replace(/20y/g,"20*y");
-        value = value.replace(/21y/g,"21*y");
-        value = value.replace(/22y/g,"22*y");
-        value = value.replace(/23y/g,"23*y");
-        value = value.replace(/24y/g,"24*y");
-        value = value.replace(/25y/g,"25*y");
-        value = value.replace(/26y/g,"26*y");
-        value = value.replace(/27y/g,"27*y");
-        value = value.replace(/28y/g,"28*y");
-        value = value.replace(/29y/g,"29*y");
-        //value = value.replace(/finalAnswer/g,this.finalAnswer); <- moved to question form substitution
-        //value = value.replace(/simplifiedAnswer/g,this.);
-        return value;
-    }
-
-    MathJaxToMathJS(stringToSub){
-        var value = stringToSub;
-        value = value.replace(/{/g,"(");
-        value = value.replace(/}/g,")");
-        value = value.replace(/over/g," / ");
-        value = value.replace(/ver/g," / ");
-        value = value.replace(/times/g," * ");
-        value = value.replace(/imes/g," * ");
-        value = value.replace(/\\/g,"");
-        //console.log(value);
-        return value;
-    }
-
-    MathJSToMathJax(stringToSub){
-        var value = stringToSub;
-        //console.log(value);
-        value = value.replace(/\(/g,"{");
-        value = value.replace(/\)/g,"}");
-        value = value.replace(/\//g," /\\/over ");
-        value = value.replace(/\*/g," /\\/times ");
-        return value;
-    }
-
-    SimplifiedAnswer(stringToSub){
-        var value = stringToSub;
-        var value1 = value.slice(1, value.indexOf("over")-1);
-        value1 = math.evaluate(this.MathJaxToMathJS(this.SubValues(value1))).toString();
-        value1 = this.MathJSToMathJax(value1);
-        var value2 = value.slice(value.indexOf("over") + 4, value.length-1);
-        //value2 = this.Solve(value2);
-        //console.log(value1);
-        //console.log(value2);
-
-        //var rex = new RegExp("\\\\");
-        var finalValue = value1 + "\\" + "over " + value2;
-
-        return finalValue;
-    }
-
-    Solve(stringToSolve){
-        stringToSolve = this.parentQuestion.HalfSubValues(stringToSolve);
-        //console.log(stringToSolve);
-        stringToSolve = this.SubValues(stringToSolve);
-        stringToSolve = this.MathJaxToMathJS(stringToSolve);
-        stringToSolve = math.evaluate(stringToSolve);
-        stringToSolve = math.round(stringToSolve, 3);
-        //stringToSolve = math.round(stringToSolve, 3);
-        //console.log(stringToSolve);
-        return stringToSolve;
-    }
-    FixAnswerText(){
-
-    }
-
-    FindAnswer(){
-        //console.log(this.answer);
-        this.finalAnswer = this.Solve(this.answerFormula);
-    }
-}
-
-class QuestionForm{
-    constructor(_type, _test, _calculator, _bigUnit, _pitch, _globalVars, _subQuestions, _imageSource){
-        this.type = _type;
-        this.test = _test;
-        this.calculator = _calculator;
-        this.bigUnit = _bigUnit;
-        this.pitch = _pitch;
-        this.globalVars = _globalVars;
-        this.subQuestions = _subQuestions;
-        this.subQuestions.forEach(element => {
-            element.parentQuestion = this;
-        });
-        this.imageSource = _imageSource;
-        
-        this.a;
-        this.b;
-        this.c;
-        this.d;
-        this.e;
-        this.f;
-        this.g;
-        this.p;
-        this.q;
-        this.r;
-        this.w;
-    }
-
-
-    NewValues(){
-        this.a = (Math.floor(Math.random() * 9) + 1);
-        this.b = (Math.floor(Math.random() * 9) + 1);
-
-        this.d = (Math.floor(Math.random() * 9) + 1);
-        this.q = (Math.floor(Math.random() * 9) + 1);
-
-        this.e = (Math.floor(Math.random() * 8) + 2);
-
-        this.sign;
-        if (Math.random() >= 0.5) this.sign = "+";
-        else this.sign = "-";
-        
-        this.f = (Math.floor(Math.random() * 8) + 2);
-        if (Math.random() >= 0.5) this.f = 0 - this.f;
-        this.g = (Math.floor(Math.random() * 8) + 2);
-        if (Math.random() >= 0.5) this.g = 0 - this.g;
-        this.n = (Math.floor(Math.random() * 5) + 1);
-        if (Math.random() >= 0.5) this.n = 0 - this.n;
-
-        this.p = (Math.floor(Math.random() * 6) + 2);
-        this.c = (Math.floor(Math.random() * 8) + 2);
-        
-        this.r = (Math.floor(Math.random() * this.a) + 1);
-        this.s = (Math.floor(Math.random() * this.r) + 1);
-        this.t = (Math.floor(Math.random() * this.s) + 1);
-        
-        this.w = (Math.floor(Math.random() * 3) + 2);
-        this.i = (this.w-1);
-        this.j = (this.w-2);
-
-        this.a = this.a.toString();
-        this.b = this.b.toString();
-        this.c = this.c.toString();
-        this.d = this.d.toString();
-        this.e = this.e.toString();
-        this.f = this.f.toString();
-        this.g = this.g.toString();
-        this.q = this.q.toString();
-        this.r = this.r.toString();
-        this.s = this.s.toString();
-        this.t = this.t.toString();
-        this.w = this.w.toString();
-        this.i = this.i.toString();
-        this.j = this.j.toString();
-    }
-
-    FullSubValues(documentToSwitch, subQToUse){
-        var string = documentToSwitch;
-
-        
-        if (subQToUse < this.subQuestions.length) string = this.subQuestions[subQToUse].SubValues(string);
-        else console.log("subQToUse subbed in out of range of subQuestions");
-        string = this.SubValues(string);
-        return string;
-    }
-
-    HalfSubValues(stringToSub){
-        var value = stringToSub;
-        value = value.replace(/-sign/g,this.sign);
-        value = value.replace(/aaa/g,this.a);
-        value = value.replace(/bbb/g,this.b);
-        value = value.replace(/ccc/g,this.c);
-        value = value.replace(/ddd/g,this.d);
-        value = value.replace(/eee/g,this.e);
-        value = value.replace(/fff/g,this.f);
-        value = value.replace(/ggg/g,this.g);
-        value = value.replace(/nnn/g,this.n);
-        value = value.replace(/ppp/g,this.p);
-        value = value.replace(/qqq/g,this.q);
-        value = value.replace(/rrr/g,this.t);
-        value = value.replace(/sss/g,this.s);
-        value = value.replace(/ttt/g,this.t);
-        value = value.replace(/www/g,this.w);
-        value = value.replace(/iii/g,this.i);
-        value = value.replace(/jjj/g,this.j);
-        value = value.replace(/=>/g, "\\(\\rightarrow\\)");
-        value = value.replace(/\+ -/g,"- ");
-        value = value.replace(/- \+/g,"- ");
-        value = value.replace(/-\+/g,"- ");
-        value = value.replace(/\+-/g,"-");
-        value = value.replace(/--/g,"+");
-        value = value.replace(/- -/g,"+ ");
-        value = value.replace(/1x/g,"x");
-        value = value.replace(/1y/g,"y");
-        return value;
-    }
-
-    SubValues(stringToSub){
-        let value = this.HalfSubValues(stringToSub);
-        this.subQuestions.forEach(element => {
-            element.FindAnswer();
-        });
-        value = value.replace(/finalAnswer/g,this.subQuestions[0].finalAnswer);
-        if(this.subQuestions.length > 1) value = value.replace(/finalBnswer/g,this.subQuestions[1].finalAnswer);
-        if(this.subQuestions.length > 2) value = value.replace(/finalCnswer/g,this.subQuestions[2].finalAnswer);
-        //value = value.replace(/simplifiedAnswer/g,this.);
-        return value;
-    }
-
-    MathJaxToMathJS(stringToSub){
-        var value = stringToSub;
-        value = value.replace(/{/g,"(");
-        value = value.replace(/}/g,")");
-        value = value.replace(/over/g," / ");
-        value = value.replace(/ver/g," / ");
-        value = value.replace(/times/g," * ");
-        value = value.replace(/imes/g," * ");
-        value = value.replace(/\\/g,"");
-        //console.log(value);
-        return value;
-    }
-
-    MathJSToMathJax(stringToSub){
-        var value = stringToSub;
-        value = value.replace(/\(/g,"{");
-        value = value.replace(/\)/g,"}");
-        value = value.replace(/\//g," /\\/over ");
-        value = value.replace(/\*/g," /\\/times ");
-        value = value.replace(/\\/g,"");
-        return value;
-    }
-
-    FixAnswerText(){
-
-    }
-
-    SimplifiedAnswer(stringToSub){
-        var value = stringToSub;
-        var value1 = value.slice(1, value.indexOf("over")-1);
-        value1 = math.evaluate(this.MathJaxToMathJS(this.SubValues(value1))).toString();
-        value1 = this.MathJSToMathJax(value1);
-        var value2 = value.slice(value.indexOf("over") + 4, value.length-1);
-        value2 = this.Solve(value2);
-
-        //var rex = new RegExp("\\\\");
-        var finalValue = value1 + "\\" + "over " + value2;
-
-        return finalValue;
-    }
-
-    GenerateAllValues(){
-        this.NewValues();
-        this.FixAnswerText();
-        this.subQuestions.forEach(element => {
-            element.NewValues();
-            element.FixAnswerText();
-        });
-    }
-
-    Contains(area){
-        if (this.unit == area) return true;
-        for (let i = 0; i < this.subQuestions.length; i++) {
-            const element = this.subQuestions[i];
-            if (element.unit == area) return true;
-        }
-        return false;
-    }
-}
-
-function NameOf(unit){
-    names = allAreas;
-    //console.log(this.names);
-    for (let i = 0; i < names.length; i++) {
-        const element = names[i][0];
-        //console.log(element + ": " + unit + "-" + i);
-        if (element == unit) return [this.names[i][1], this.names[i][2]];
-    }
-    return ["", ""];
-}
-
-function FindArea(unit){
-    for (let i = 0; i < areas.length; i++) {
-        const element = areas[i];
-        if (element.unit == unit) return i;
-    }
-    return -1;
-}
-
-class Area{
-    constructor(_unit, _pastQuestions, _totalAnswered, _correct){
-        this.unit = _unit;
-        this.externalLinks = NameOf(this.unit)[1];
-        this.name = NameOf(this.unit)[0];
-        this.totalAnswered = _totalAnswered;
-        this.correct = _correct;
-
-        this.pastQuestions = _pastQuestions;
-    }
-
-    //001112223346
-}
-
-var allAreas = [
-    //["2.1", "Average Rate of Change", "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:functions/x2f8bb11595b61c86:average-rate-of-change/v/introduction-to-average-rate-of-change"],
-    //["2.7", "Complex Derivative Rules", ""],
-    ["3.2", "Implicit Differentiation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-differentiation-1"],
-    ["4.5", "Related Rates", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-4/v/rates-of-change-between-radius-and-area-of-circle"],
-    //["4.6", "Linear Approximation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/linear-approximation-example"],
-    ["4.7", "L'Hopital's Rule", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/introduction-to-l-hopital-s-rule"],
-    ["5.4", "Determining Local Extrema", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/finding-critical-numbers"],
-    //["5.5", "Determining Global Extrema", ""],
-    ["7.5", "Euler's Method", "https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method"],
-    //["7.7", "Solving Differential Equations", "https://www.khanacademy.org/math/ap-calculus-ab/ab-differential-equations-new/ab-7-7/v/finding-constant-of-integration-rational"],
-    ["8.1", "Average Value", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-1/v/average-function-value-closed-interval"],
-    //["8.5", "Area Between Curves", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves"],
-    //["8.7", "Volumes with Cross Sections", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-7/v/volume-with-cross-sections-intro"],
-    ["8.9", "Volumes of Rotation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-9/v/disk-method-around-<var>x</var>-axis"],
-    //["10.11", "Taylor Polynomials", "https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new/bc-10-11/v/maclaurin-and-taylor-series-intuition"]
-];
-
-function Random (tingz){
-    var num = Math.floor(Math.random()*tingz.length);
-    return tingz[num];
-}
-
-var storedPastQuestions = 6;
-let areas = new Array();
-
-function PushLocalAreas(){
-    //initializes local storage if it does not exist
-    localStorage.setItem('areas_unit', '[]');
-
-    //creates temporary arrays to store subject area information in
-    var areas_unit = new Array();
-    var areas_pastQuestions = new Array();
-    var areas_totalAnswered = new Array();
-    var areas_correct = new Array();
-
-    //loops through each subject area and adds its information to the corresponding temporary array
-    for (let i = 0; i < areas.length; i++) {
-        const element = areas[i];
-        areas_unit.push(element.unit);
-        //past questions is an array for each subject area, but we need to store it as a single value
-        //so, it puts all the values into a single string seperated by - so that it can seperate them later
-        var pastQuestions = JSON.stringify(element.pastQuestions).replace(/,/g, "-");
-        areas_pastQuestions.push(pastQuestions);
-        areas_totalAnswered.push(JSON.stringify(element.totalAnswered));
-        areas_correct.push(JSON.stringify(element.correct));
-    }
-
-    //pushes all of the temporary arrays into html local storage
-    localStorage.setItem('areas_unit', areas_unit);
-    localStorage.setItem('areas_pastQuestions', areas_pastQuestions);
-    localStorage.setItem('areas_totalAnswered', areas_totalAnswered);
-    localStorage.setItem('areas_correct', areas_correct);
-}
-
-function FetchLocalAreas(){
-    areas = new Array();
-
-    //checks if the needed arrays exist in local storage
-    if (localStorage.getItem("areas_unit") != null){
-        //arrays are stored as strings in html local storage
-        //so, we seperate each string out with the , character into an array of values
-        var units = localStorage.getItem("areas_unit").split(',');
-        var pastQuestions = localStorage.getItem("areas_pastQuestions").split(',');
-        var totalAnswered = localStorage.getItem("areas_totalAnswered").split(',');
-        var correct = localStorage.getItem("areas_correct").split(',');
-
-        //logs success for debug purposes
-        console.log("success" + units.length);
-
-        //loops through each subject area found in local storage
-        for (let i = 0; i < units.length; i++) {
-            //pushes the found subject area with all of its information into our session's area array
-            const element = units[i];
-            area = new Area(
-                units[i],
-                //seperates the pastquestions variable by - and parses to get the array that was put in
-                JSON.parse(pastQuestions[i].replace(/-/g, ",")),
-                JSON.parse(totalAnswered[i]),
-                JSON.parse(correct[i])
-            );
-            areas.push(area);
-        }
-    }
-}
-
-function Init(){
-    var a = new Array();
-    a = allAreas;
-    a = a.sort(UnitCompare);
-    var focusMenu = document.getElementById("focusArea");
-    focusMenu.multiple = false;
-    for (let i = 0; i < a.length; i++) {
-        var newOption = document.createElement('option');
-        newOption.innerText = a[i][0] + ": " + a[i][1];
-        newOption.value = a[i][0];
-        focusMenu.appendChild(newOption);
-    }
-
-    if (localStorage.getItem("defaultVal") != ""){
-        focusMenu.value = localStorage.getItem("defaultVal");
-    } else {
-        focusMenu.value = "none";
-    }
-    localStorage.setItem("defaultVal", "");
-}
-
-function UnitCompare(a, b){
-    return a[0] - b[0];
-}
-
-function NextQuestion(){
-    //gets the question parameters as inputted by the user
-    var focus = document.getElementById("focusArea").value;
-    var apAllowed = document.getElementById("ap").checked;
-    var ibAllowed = document.getElementById("ib").checked;
-
-    //creates an empty array
-    var q = new Array();
-
-    //and fills it with all of the possible question types
-    for (let i = 0; i < questions.length; i++) {
-        const element = questions[i];
-        q.push(element);
-    }
-    j = q.length;
-    //loops through all potential questions up until the number of questions in the array
-    for (let i = 0; i < j; i++) {
-        const element = q[i];
-        if ((element.type == 1 && !apAllowed) || (element.type == 2 && !ibAllowed)){
-            //removes the question from consideration if it doesn't fit with the AP/IB parameters
-            //also moves the currently considered question (i) and the total number of questions (j)
-            //down by one to ensure that no questions are skipped
-            q.splice(i, 1); 
-            i--; 
-            j--;
-        }
-        else if (focus != "none"){
-            if (!element.Contains(focus)){
-                //removes each question from consideration if it doesn't related to the focus subject area
-                q.splice(i, 1);
-                i--;
-                j--;
-            }
-        }
-    }
-
-    if (q.length > 0){
-        //if there are some questions that fit the parameters, a random fitting question is chosen
-        var rand = Math.floor(Math.random()*q.length);
-        ShowNewQuestion(q[rand]);
-        //and the number of questions found is displayed as label text
-        if (q.length == 1) document.getElementById("newQuestionLabel").innerText = q.length + " question found";
-        else document.getElementById("newQuestionLabel").innerText = q.length + " questions found";
-    } else {
-        //if no questions fit the parameters, an error message is displayed
-        console.log("no questions with those paramaters found");
-        //and the fact that no questions were found is displayed as label text
-        document.getElementById("newQuestionLabel").innerText = "No questions found :(";
-    }
-}
-
-//console.log(areas);
-
-FetchLocalAreas();
-Init();
-
-console.log(areas);
-//PushLocalAreas();
-
-
-console.log(areas);
-
-//console.log(areas[0].name);
-//console.log(areas[0].unit + ": " + areas[0].accuracy + "accuracy");
-
-
-//function DisplayQuestion(questionForm){
-//    var documentsToSwitch = new Array();
-//    documentsToSwitch.push(document.getElementById("pitch"));
-//    document.getElementById("pitch").innerText = questionForm.pitch;
-//    document.getElementById("a-question").innerText = questionForm.subQuestions[0].question;
-//    document.getElementById("b-question").innerText = questionForm.subQuestions[1].question;
-//    document.getElementById("c-question").innerText = questionForm.subQuestions[2].question;
-//    questionForm.SubNewValues(documentsToSwitch);
-//}
-
-function UpdateAllQuestionText(){
-    if (currentQuestion.imageSource != "" && currentQuestion.imageSource != null){
-        document.getElementById("image").src = "./images/" + currentQuestion.imageSource + ".png";
-        document.getElementById("image").style.display = "block";
-    } else {
-        document.getElementById("image").style.display = "none";
-    }
-    
-    for (let i = 6; i >= 0; i--) {
-        const element = currentQuestion.subQuestions[i];
-        var char = String.fromCharCode(97+i);
-        if (i < currentQuestion.subQuestions.length){
-            //console.log(char);
-            for (let j = 0; j < document.getElementsByClassName(char).length; j++) {
-                const element = document.getElementsByClassName(char)[j];
-                if (element.type == "button" || element.type == "text") {
-                    element.style.display = "inline";
-                    if (element.classList.contains("label")) element.innerHTML = "label";
-                }
-                else element.style.display = "block";
-            }
-        } else {
-            //console.log(char);
-            for (let j = 0; j < document.getElementsByClassName(char).length; j++) {
-                const element = document.getElementsByClassName(char)[j];
-                //console.log(element.style.display);
-                element.style.display = "none";
-            }
-        }
-        
-    }
-    let text = document.getElementById("test-text");
-    text.innerHTML = currentQuestion.test;
-    for (let index = 0; index < document.getElementsByClassName("demand").length; index++) {
-        const element = document.getElementsByClassName("demand")[index];
-        let i = 10000;
-        if (element.classList.contains("a")) i = 0;
-        if (element.classList.contains("b")) i = 1;
-        if (element.classList.contains("c")) i = 2;
-        if (element.classList.contains("d")) i = 3;
-        if (element.classList.contains("e")) i = 4;
-        if (currentQuestion.subQuestions.length > i) {
-            if (currentQuestion.subQuestions[i].demand != null) element.innerHTML = currentQuestion.subQuestions[i].demand;
-            else document.getElementsByClassName("demand")[index].innerHTML = "";
-        } //else document.getElementsByClassName("demand")[index].innerHTML = "";
-    }
-    
-    for (let index = 0; index < document.getElementsByClassName("question").length; index++) {
-        const element = document.getElementsByClassName("question")[index];
-        let i = 10000;
-        if (element.classList.contains("a")) i = 0;
-        if (element.classList.contains("b")) i = 1;
-        if (element.classList.contains("c")) i = 2;
-        if (element.classList.contains("d")) i = 3;
-        if (element.classList.contains("e")) i = 4;
-        if (currentQuestion.subQuestions.length > i) element.innerHTML = currentQuestion.subQuestions[i].question;
-            //else document.getElementsByClassName("question")[index].innerHTML = "";
-    }
-
-    for (let index = 0; index < document.getElementsByClassName("answer").length; index++) {
-        const element = document.getElementsByClassName("answer")[index];
-        let i = 10000;
-        if (element.classList.contains("a")) i = 0;
-        if (element.classList.contains("b")) i = 1;
-        if (element.classList.contains("c")) i = 2;
-        if (element.classList.contains("d")) i = 3;
-        if (element.classList.contains("e")) i = 4;
-        //change back to answerFormula
-        if (currentQuestion.subQuestions.length > i) element.innerHTML = currentQuestion.subQuestions[i].steps;
-        //else document.getElementsByClassName("answer")[index].innerHTML = "";
-    }
-    document.getElementById("pitch").innerHTML = currentQuestion.pitch;
-    //MathJax.typeset();
-}
-
-function UpdateAllFormula(){
-    for (let index = 0; index < document.getElementsByClassName("formulae").length; index++) {
-        const element = document.getElementsByClassName("formulae")[index];
-        let formulaText = element.innerHTML;
-        if (element.classList.contains("a")){
-            if (currentQuestion.subQuestions.length > 0){
-                formulaText = currentQuestion.FullSubValues(formulaText, 0);
-                //console.log("a shit");
-            }
-        } else if (element.classList.contains("b")){
-            if (currentQuestion.subQuestions.length > 1){
-                formulaText = currentQuestion.FullSubValues(formulaText, 1);
-                //console.log("b shit");
-            }
-        } else if (element.classList.contains("c")){
-            if (currentQuestion.subQuestions.length > 2){
-                formulaText = currentQuestion.FullSubValues(formulaText, 2);
-                //console.log("c shit");
-            }
-        } else if (element.classList.contains("d")){
-            if (currentQuestion.subQuestions.length > 3){
-                formulaText = currentQuestion.FullSubValues(formulaText, 3);
-            }
-        } else if (element.classList.contains("e")){
-            if (currentQuestion.subQuestions.length > 4){
-                formulaText = currentQuestion.FullSubValues(formulaText, 4);
-            }
-        } else if (element.classList.contains("f")){
-            if (currentQuestion.subQuestions.length > 5){
-                formulaText = currentQuestion.FullSubValues(formulaText, 5);
-            }
-        } else {
-            formulaText = currentQuestion.HalfSubValues(formulaText);
-        }
-        
-        //if (.answerFormula.includes("over")){
-        //    formulaText = formulaText.replace(/simplifiedAnswer/, q1.simplifiedAnswer);
-        //}
-        // can use element.innerText or .textContent if issues occur
-        element.innerHTML = formulaText;
-    }
-    MathJax.typeset();
-}
-
-function CheckAnswer(proposed, question){
-    if (question.answer != undefined){
-        if (question.answer == "") return true;
-        if (question.answer.includes(proposed)) {
-            return true;
-        }
-    }
-
-    if (proposed == "") return false;
-    let real = question.finalAnswer;
-    let errorMargin = 0.0019;
-    
-    if (Math.abs(proposed - real) <= errorMargin){
-        return true;
-    }
-
-    if (proposed.includes("x") || proposed.includes("y")){
-        var a = true;
-        for (let index = 0; index < 10; index++) {
-            let x = Math.random();
-            let y = Math.random();
-            //console.log(proposed);
-            //console.log(question.answer);
-            var stringA = proposed.replace(/x/g, x).replace(/y/g, y);
-            var stringB = question.answer.replace(/x/g, x).replace(/y/g, y);
-            //console.log(stringA);
-            //console.log(stringB);
-            if (question.Solve(stringA) != question.Solve(stringB)){
-                a = false;
-            }
-        }
-        if (a){
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function CorrectAnswer(question){
-    console.log("yayy");
-    //ShowNewQuestion(aaab);
-
-    FixData(question, 1);
-}
-
-function IncorrectAnswer(question){
-    console.log("no :(");
-    console.log("was looking for " + question.answer);
-
-    FixData(question, 0);
-}
-
-function FixData(question, correct){
-    if (question.unit != ""){
-        FetchLocalAreas();
-        if (FindArea(question.unit) == -1){
-            //create new area if one doesnt already exist
-            areas.push(new Area(
-                question.unit,
-                [],
-                0,
-                0
-            ));
-        }
-        index = FindArea(question.unit);
-        areas[index].totalAnswered++;
-        areas[index].correct+=correct;
-
-        if (areas[index].pastQuestions.length < storedPastQuestions){
-            //add the new 1 or 0 to the front of the array
-            var a = Array();
-            a.push(correct);
-            for (let i = 0; i < areas[index].pastQuestions.length; i++) {
-                const element = areas[index].pastQuestions[i];
-                a.push(element);
-            }
-            areas[index].pastQuestions = a;
-        } else {
-            //shift past x questions back one and insert a 1 or a 0 to newest slot
-            for (let i = areas[index].pastQuestions.length-2; i >= 0; i--) {
-                areas[index].pastQuestions[i+1] = areas[index].pastQuestions[i];
-            }
-            areas[index].pastQuestions[0] = correct;
-        }
-
-        console.log(areas);
-        PushLocalAreas();
-    }
-}
-
-document.getElementById("a-submit").onclick = function(){
-    var val = document.getElementById("a-answer-input").value;
-    var bool = CheckAnswer(val, currentQuestion.subQuestions[0]);
-    if (bool){
-        document.getElementById("a-submit").style.backgroundColor = '#52d383';
-        CorrectAnswer(currentQuestion.subQuestions[0]);
-        //document.getElementById("a-submit").style.color
-    } else {
-        document.getElementById("a-submit").style.backgroundColor = '#d05454';
-        document.getElementById("a-answer").style.display = "block";
-        IncorrectAnswer(currentQuestion.subQuestions[0]);
-    }
-}
-
-document.getElementById("b-submit").onclick = function(){
-    var val = document.getElementById("b-answer-input").value;
-    var bool = CheckAnswer(val, currentQuestion.subQuestions[1]);
-    if (bool){
-        document.getElementById("b-submit").style.backgroundColor = '#52d383';
-        CorrectAnswer(currentQuestion.subQuestions[1]);
-        //document.getElementById("a-submit").style.color
-    } else {
-        document.getElementById("b-submit").style.backgroundColor = '#d05454';
-        document.getElementById("b-answer").style.display = "block";
-        IncorrectAnswer(currentQuestion.subQuestions[1]);
-    }
-}
-
-document.getElementById("c-submit").onclick = function(){
-    var val = document.getElementById("c-answer-input").value;
-    var bool = CheckAnswer(val, currentQuestion.subQuestions[2]);
-    if (bool){
-        document.getElementById("c-submit").style.backgroundColor = '#52d383';
-        CorrectAnswer(currentQuestion.subQuestions[2]);
-        //document.getElementById("a-submit").style.color
-    } else {
-        document.getElementById("c-submit").style.backgroundColor = '#d05454';
-        document.getElementById("c-answer").style.display = "block";
-        IncorrectAnswer(currentQuestion.subQuestions[2]);
-    }
-}
-
-document.getElementById("d-submit").onclick = function(){
-    var val = document.getElementById("d-answer-input").value;
-    var bool = CheckAnswer(val, currentQuestion.subQuestions[3]);
-    if (bool){
-        document.getElementById("d-submit").style.backgroundColor = '#52d383';
-        CorrectAnswer(currentQuestion.subQuestions[3]);
-        //document.getElementById("a-submit").style.color
-    } else {
-        document.getElementById("d-submit").style.backgroundColor = '#d05454';
-        document.getElementById("d-answer").style.display = "block";
-        IncorrectAnswer(currentQuestion.subQuestions[3]);
-    }
-}
-
-document.getElementById("newQuestion").onclick = function(){
-    NextQuestion();
-}
-
-
-function ResetButtons(){
-    document.getElementById("a-submit").style.backgroundColor = '#ffffff';
-    document.getElementById("b-submit").style.backgroundColor = '#ffffff';
-    document.getElementById("c-submit").style.backgroundColor = '#ffffff';
-    document.getElementById("d-submit").style.backgroundColor = '#ffffff';
-}
-
-function ResetAnswerText(){
-    document.getElementById("a-answer").style.display = "none";
-    document.getElementById("b-answer").style.display = "none";
-    document.getElementById("c-answer").style.display = "none";
-    document.getElementById("d-answer").style.display = "none";
-}
-
-function ShowNewQuestion(question){
-    currentQuestion = question;
-    currentQuestion.GenerateAllValues();
-    UpdateAllQuestionText();
-    UpdateAllFormula();
-    ResetButtons();
-    ResetAnswerText();
-}
-
-
-
 let questions = new Array();
 
 //#region AP Related Rates Questions
-function q1(){
+function sixteenBCfive(){
     let subQs = new Array();
     subQs.push(new SubQuestion(
         "8.1",
@@ -954,7 +37,7 @@ function q1(){
     return a;
 }
 
-function q2(){
+function sixteenBCfour(){
     subQs = new Array();
     newQ = new SubQuestion(
         "3.2",
@@ -1100,8 +183,9 @@ function q4(){
     b = new SubQuestion(
         "4.5",
         "",
-        "(a) find the rate of change of the volume of water in the barrel with respect to time when the height of the water is a_a feet. Indicate units of measure.",
+        "(a) Find the rate of change of the volume of water in the barrel with respect to time when the height of the water is a_a feet. Indicate units of measure.",
         "\\pi * ccc^2 * ({-{1 \\over aaa}\\sqrt{a_a}})",
+        
         "\\({dV \\over dt} = \\pi r^2 \\left(dh \\over dt \\right)\\) &nbsp; [1 point] <br> \\({\\left[dV \\over dt \\right]_{h=a_a}} = \\pi * ccc^2 \\left[dh \\over dt \\right]_{h=a_a}\\) <br> \\(= \\pi * ccc^2 \\left({-{1 \\over aaa}\\sqrt{a_a}}\\right)= e_e\\) feet\\(^3\\)/second &nbsp; [1 point]"
     );
     b.FixAnswerText = function() {
@@ -1111,8 +195,8 @@ function q4(){
     var complexQuestion = new SubQuestion(
         "5.3",
         "",
-        "(b) when the height of the water is b_b feet, is the rate of change of the height of the water with respect to time increasing or decreasing? Explain your reasoning.",
-        "0",
+        "(b) When the height of the water is b_b feet, is the rate of change of the height of the water with respect to time increasing or decreasing? Explain your reasoning (but don't type it in).",
+        "1",
         ""
     );
     complexQuestion.FixAnswerText = function (){
@@ -1126,7 +210,9 @@ function q4(){
             complexQuestion.steps = "\\({d^2h \\over dh^2} = -{1 \\over 2(aaa) \\sqrt{h}} * {dh \\over dt}\\) &nbsp; [1 point] <br> \\(= -{1 \\over e_e \\sqrt{h}} * {-{1\\over aaa} \\sqrt{h}}\\) &nbsp; [1 point] <br> \\(= {1 \\over e_e (aaa)}\\) <br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} > 0\\) for \\(h > 0\\), the rate of change of the height is <b>increasing</b> when the height of the water is b_b feet. &nbsp; [1 point]"
         } else if (secondDerivative < 0){
             complexQuestion.answer = "decreasing";
+            //should never happen bc of question wording
             complexQuestion.f = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
+            //complexQuestion.steps = "<br> Because \\({d^2y \\over dy^2} = {1 \\over g_g} < 0\\) for \\(h > 0\\), the rate of change of the height is decreasing when the height of the water is \\(b_b\\) feet."
         } else {
             complexQuestion.answer = "oh no oopsie";
         }
@@ -1137,7 +223,7 @@ function q4(){
         "",
         "(c) At time \\(t = 0\\) seconds, the height of the water is a_a feet. Use separation of variables to find an expression for \\(h\\) in terms of \\(t\\)",
         "0",
-        "\\({dh \\over \\sqrt h } = - {1 \\over aaa} dt\\) &nbsp; [1 point] <br> \\(\\left \\int{dh \\over \\sqrt h } = \\int- {1 \\over aaa} dt\\)"
+        "\\({dh \\over \\sqrt h } = - {1 \\over aaa} dt\\) &nbsp; [1 point] <br> \\( \\int{dh \\over \\sqrt h} = \\int- {1 \\over aaa} dt\\) <br> \\( 2\\sqrt{h} = -{1 \\over aaa} t + C\\) &nbsp; [1 point] <br> \\( 2\\sqrt{a_a} = -{1 \\over aaa}\\left(0\\right) + C => C = 2\\sqrt{a_a}\\) &nbsp; [1 point] <br> \\( 2\\sqrt{h} = -{1 \\over aaa}t + 2\\sqrt{a_a}\\) <br> \\(h(t) = \\left(-{1 \\over 2*aaa}t + \\sqrt{a_a}\\right)^2\\) &nbsp; [1 point]"
     ));
     let a = new QuestionForm(
         1,
@@ -1151,6 +237,72 @@ function q4(){
     );
     a.FixAnswerText = function (){
         a.e = a.c * 2;
+    }
+    return a;
+}
+
+
+function q101(){
+    //not finished yet
+    subQs = new Array();
+    b = new SubQuestion(
+        "",
+        "",
+        "(a) How many fish enter the lake over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)? Give your answer to the nearest whole number.",
+        "a_a",
+        "\\(\\int_0^ppp{E(t) \\text{ } dt} = \\int_0^ppp\\left(www0 + 15 \\sin\\left(\\pi t \\over 6\\right)\\right) dt\\) &nbsp; [1 point] <br> \\(\\int_0^ppp\\left.{E(t) \\text{ } dt} = www0x - {{ttt (15) \\cos\\left({\\pi x} \\over ttt\\right)} \\over \\pi}\\right\\rvert_0^ppp \\) <br> \\(= www0(ppp) - {{t_t \\cos\\left({ppp\\pi} \\over ttt\\right)} \\over \\pi} + {{t_t \\cos\\left(0\\right)} \\over \\pi} = e_e\\) &nbsp; [1 point] <br> To the nearest whole number, a_a fish enter the lake from midnight to ppp A.M."
+    );
+    b.FixAnswerText = function() {
+        b.t = b.Solve("ttt * 15");
+        b.w = b.Solve("www0 * 15");
+        b.e = b.Solve("www0(ppp) - {{t_t \\cos({ppp\\pi} \\over ttt)} \\over \\pi} + {{t_t \\cos(0)} \\over \\pi}");
+        b.a = Math.round(b.e);
+    }
+    subQs.push(b);
+    var complexQuestion = new SubQuestion(
+        "",
+        "",
+        "(b) What is the average number of fish that leave the lake per hour over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)?",
+        "e_e",
+        "\\({1\\over ppp - 0} \\int_0^ppp{L(t) \\text{ } dt} = {1\\over ppp - 0} \\int_0^ppp({aaa + 2^{0.qqqt}})dt = e_e\\) &nbsp; [1 point] <br> The average number of fish that leave the lake per hour from midnight to ppp A.M. is e_e fish per hour. &nbsp; [1 point]"
+    );
+    complexQuestion.FixAnswerText = function() {
+        //b.e = b.Solve("{2^{0.qqqt} \\over {0.qqq * log(2, 2.718)}} + 4*ppp");
+        //complexQuestion.e = complexQuestion.Solve("log(2, 2.718)");
+        //complexQuestion.e = complexQuestion.Solve("(pow(2, 0.qqqt) / (0.qqq * log(2, 2.718)))");
+        complexQuestion.e = complexQuestion.Solve("(pow(2, 0.qqq * ppp) / (0.qqq * log(2, 2.718)) + aaa*ppp - (1 / (0.qqq * log(2, 2.718)))) / ppp");
+    }
+    subQs.push(complexQuestion);
+    subQs.push(new SubQuestion(
+        "",
+        "",
+        "(c) At what time \\(t\\) for \\(0 \\le t \\le jjj\\), is the greatest number of fish in the lake? Justify your answer.",
+        "0",
+        ""
+    ));
+    subQs.push(new SubQuestion(
+        "",
+        "",
+        "(d) Is the rate of change in the number of fish in the lake increasing or decreasing at ppp A.M. \\((t = ppp)\\)? Explain your reasoning.",
+        "0",
+        ""
+    ));
+    let a = new QuestionForm(
+        1,
+        "AP Calculus BC 2019 - Question 1",
+        false,
+        "Geometry",
+        "Fish enter a lake at a rate modelled by the function \\(E\\) given by \\(E(t) = www0 + 15 \\sin\\left(\\pi t \\over ttt\\right)\\). Fish leave the lake at a rate modeled by the function \\(L\\) given by \\(L(t) = aaa + 2^{0.qqqt}\\). Both \\(E(t)\\) and \\(L(t)\\) are measured in fish per hour, and \\(t\\) is measured in hours since midnight \\((t = 0)\\).",
+        null,
+        subQs,
+        ""
+    );
+    a.FixAnswerText = function (){
+        a.j = parseInt(a.p) + Math.floor(Math.random() * 3) + 1;
+        a.j = a.j.toString();
+        a.t = 6;
+        if (Math.random() > 0.5) a.t = 3;
+        a.q = (Math.floor(Math.random() * 4) + 1).toString();
     }
     return a;
 }
@@ -1385,11 +537,12 @@ function q9(){
 }
 
 //Completely finished
-questions.push(q1());
-questions.push(q2());
+//questions.push(sixteenBCfive());
+//questions.push(sixteenBCfour());
+//questions.push(q4());
 
 //Largely finished
-//questions.push(q3());
+questions.push(q101());
 
 
 //Working on
@@ -1503,14 +656,6 @@ function qqq1(){
 
 //#endregion
 
-
-
-console.log(questions[0].Contains("8.1"))
-//ShowNewQuestion(questions[i]);
-
 NextQuestion();
 
 ShowNewQuestion(questions[0]);
-
-
-
