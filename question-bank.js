@@ -6,14 +6,14 @@ function sixteenBCfive(){
     subQs.push(new SubQuestion(
         "8.1",
         null,
-        "(a) Find the average value of the radius of the funnel",
+        "(a) Find the average value of the radius of the funnel.",
         "{{qqq \\over {ccc}} + {aaa^2 \\over {3*ccc}}}",
         "average value = \\({1 \\over {b-a}} \\times \\int_a^b{f(h) \\>dh}\\) <br>\\( = {1 \\over {aaa-0}} \\times \\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right) \\>dh} \\) &nbsp; [1 point] <br>\\( = {{1 \\over aaa} \\times {1 \\over ccc}} \\times \\int_0^aaa{(qqq + h^2) \\>dh} \\) <br>\\( = {1\\over aaa \\times ccc} \\left[qqq(h) + {{(h)^3}\\over 3}\\right]_0^aaa\\) &nbsp; [1 point] <br> \\(= {1\\over aaa \\times ccc} \\left(qqq(aaa) + {{(aaa)^3}\\over 3}\\right) = finalAnswer\\) in &nbsp; [1 point]"
     ));
     subQs.push(new SubQuestion(
         "8.9",
         null,
-        "(b) Find the volume of the funnel",
+        "(b) Find the volume of the funnel.",
         "{\\pi \\over ccc^2} * ((aaa * qqq^2) + {aaa^5 \\over 5} + {{2*qqq*aaa^3} \\over 3})",
         "volume = \\(\\int_0^h{A(h) \\>dh}\\) <br> = \\(\\int_0^aaa{\\left(\\pi R(h)^2\\right) \\>dh}\\) <br> = \\(\\pi\\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right)^2 \\>dh}\\) &nbsp; [1 point] <br> = \\({\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq + h^2}\\right)^2 \\>dh}\\) <br> = \\({\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq^2 + 2(qqq)h^2 + h^4}\\right) \\>dh}\\) <br> = \\({\\pi \\over{ccc^2}} \\left[{qqq^2h + {2(qqq)h^3\\over3} + {h^5\\over5}}\\right]_0^aaa\\) &nbsp; [1 point] <br> = \\({\\pi \\over{ccc^2}} \\left({qqq^2(aaa) + {2(qqq)(aaa)^3\\over3} + {(aaa)^5\\over5}}\\right) = finalBnswer\\) inches\\(^3\\) &nbsp; [1 point]"
     ));
@@ -29,7 +29,7 @@ function sixteenBCfive(){
         "AP Calculus BC 2016 - Question 5",
         false,
         "Geometry",
-        "The inside of a funnel of height aaa inches has circular cross-sections as shown in the image above. At height <var>h</var>, the radius of the funnel is given by \\(r={{qqq + h^2} \\over ccc}\\) where \\(0 \\le h \\le aaa \\)",
+        "The inside of a funnel of height aaa inches has circular cross-sections as shown in the image above. At height <var>h</var>, the radius of the funnel is given by \\(r={{qqq + h^2} \\over ccc}\\) where \\(0 \\le h \\le aaa \\).",
         null,
         subQs,
         "2016C-5"
@@ -42,7 +42,7 @@ function sixteenBCfour(){
     newQ = new SubQuestion(
         "3.2",
         null,
-        "(a) Find \\({d^2y}\\over{dx^2}\\) in terms of <var>x</var> and <var>y</var>",
+        "(a) Find \\({d^2y}\\over{dx^2}\\) in terms of <var>x</var> and <var>y</var>.",
         "(www*(x)^(www-1))+((x^www) / -signppp)+(y / (ppp^2))",
         "\\(f''(x) = {wwwx^{(www-1)}} -sign {1\\over ppp} \\left(dy\\over dx\\right) = {wwwx^{(www-1)}} -sign {1\\over ppp} \\left(x^www+{y\\overppp}\\right) = {wwwx^q_q} -sign {{x^www} \\over ppp} +{y \\over {ppp^2}}\\)"
     );
@@ -58,7 +58,7 @@ function sixteenBCfour(){
     var complexQuestion = new SubQuestion(
         "5.4",
         "",
-        "(b) let \\(y = f(x)\\) be the solution to a particular graph which passes through the point \\((n_n, d_d)\\). does the graph of \\(f\\) have a relative minimum, a relative maximum or neither at the point \\((n_n, d_d)\\)?",
+        "(b) Let \\(y = f(x)\\) be the solution to a particular graph which passes through the point \\((n_n, d_d)\\). does the graph of \\(f\\) have a relative minimum, a relative maximum or neither at the point \\((n_n, d_d)\\)?",
         "0",
         null
     );
@@ -89,7 +89,7 @@ function sixteenBCfour(){
     var newQuestion = new SubQuestion(
         "4.7",
         "",
-        "(c) let \\(y = g(x)\\) be the particular solution to the given differential equation with \\(g(n_n)=f_f\\). find \\(\\mathop{lim}\\limits_{x\\rightarrown_n}  {{g(x)-f_f}\\over{e_e(x-n_n)^{2}}}\\).",
+        "(c) Let \\(y = g(x)\\) be the particular solution to the given differential equation with \\(g(n_n)=f_f\\). find \\(\\mathop{lim}\\limits_{x\\rightarrown_n}  {{g(x)-f_f}\\over{e_e(x-n_n)^{2}}}\\).",
         "{{{qqq \\over {ccc}} + {aaa^2 \\over {3*ccc}}} \\over {2 \\times e_e}}",
         "\\(\\mathop{lim}\\limits_{x\\rightarrown_n}  {{g(x)-f_f}\\over{e_e(x-n_n)^{2}}}={f_f-f_f \\over e_e(n_n-n_n)^2} = {0\\over0}\\) <br> so, using l'Hopital's rule,  \\(\\mathop{lim}\\limits_{x\\rightarrown_n} {{g'(x)}\\over{2*e_e(x-n_n)}}={0\\over0}\\) <br> so, using l'Hopital's rule again, \\(\\mathop{lim}\\limits_{x\\rightarrown_n} {{g''(x)} \\over {2 \\times e_e}} = {{{qqq \\over {ccc}} + {aaa^2 \\over {3*ccc}}} \\over {2 \\times e_e}}\\) [2 points] <br> = \\(finalCnswer\\) &nbsp;[1 point]"
     );
@@ -100,7 +100,7 @@ function sixteenBCfour(){
     subQs.push(new SubQuestion(
         "7.5",
         "",
-        "(d) let \\(y = h(x)\\) be the particular solution to the given differential equation with \\(h(0)=c_c\\). Using Euler's method, starting at \\(x=0\\) with l_l steps of equal size, approximate \\(h(1)\\)",
+        "(d) Let \\(y = h(x)\\) be the particular solution to the given differential equation with \\(h(0)=c_c\\). Using Euler's method, starting at \\(x=0\\) with l_l steps of equal size, approximate \\(h(1)\\).",
         "0",
         "blah"
     ));
@@ -109,7 +109,7 @@ function sixteenBCfour(){
         "AP Calculus BC 2016 - Question 4",
         false,
         "Differential Equations",
-        "Consider the differential equation \\({dy \\over dx } = x^www -sign {1\\overppp}y\\)",
+        "Consider the differential equation \\({dy \\over dx } = x^www -sign {1\\overppp}y\\).",
         null,
         subQs,
         ""
@@ -551,14 +551,11 @@ function q9(){
 }
 
 //Completely finished
-//questions.push(sixteenBCfive());
-//questions.push(sixteenBCfour());
-//questions.push(q4());
+questions.push(sixteenBCfive());
 
-//Largely finished
+//Mostly finished
 questions.push(q101());
 questions.push(sixteenBCfour());
-questions.push(sixteenBCfive());
 
 
 //Working on
