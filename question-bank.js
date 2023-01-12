@@ -288,8 +288,8 @@ function q101(){
         "\\(E'(ppp) - L'(ppp) = e_e - (r_r) = a_a n_n 0 \\) &nbsp; [1 point] <br> Because \\(E'(ppp) - L'(ppp) n_n 0 \\), the rate of change in the number of fish is b_b at time \\((t = ppp)\\) &nbsp; [1 point]"
     );
     d.FixAnswerText = function() {
-        d.e = d.Solve("{2^{0.qqq * ppp} * log(2, 2.718) * 0.qqq}");
-        d.r = d.Solve("15 cos({\\pi ppp} \\over ttt) * \\pi / ttt");
+        d.e = d.Solve("15 cos({\\pi ppp} \\over ttt) * \\pi / ttt");
+        d.r = d.Solve("{2^{0.qqq * ppp} * log(2, 2.718) * 0.qqq}");
         console.log(d.j);
         d.a = d.Solve("e_e - r_r");
         d.n = "<";

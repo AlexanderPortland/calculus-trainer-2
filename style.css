@@ -19,6 +19,15 @@
     margin-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
   }
+
+  .hidden-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hidden-link:hover {
+    color:rgb(73, 125, 255);
+  }
   
   .questions{
     margin-left: 60px;
