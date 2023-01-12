@@ -128,7 +128,7 @@ for (let i = 0; i < areas.length; i++) {
     if (element.totalAnswered > 0) var accuracy = Math.round(element.correct * 100 / element.totalAnswered) + "%";
     else var accuracy = "~~%";
 
-    listItem.innerHTML = element.unit + "<b> " + element.name + "</a></b> | " + " accuracy:  " + accuracy + " overall, " + recentAccuracy + " recently " + "<div class = \"leftFloat\">(<a href=\"index.html\" id=\"" + element.unit + "-practice\">Practice</a>, <a href = \"" + element.externalLinks + "\" target = \"_blank\">Learn More</a>)</div>";
+    listItem.innerHTML = element.unit + "<b> " + element.name + "</a></b> | " + " accuracy:  " + accuracy + " overall, " + recentAccuracy + " recently " + "<div class = \"leftFloat\">(<a href=\"learn.html\" id=\"" + element.unit + "-practice\">Practice</a>, <a href = \"" + element.externalLinks + "\" target = \"_blank\">Learn More</a>)</div>";
     listElement.appendChild(listItem);
     console.log("looking at \"" + element.unit + "-practice\"");
     document.getElementById(element.unit + "-practice").onclick = function (){
