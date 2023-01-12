@@ -6,10 +6,18 @@
     font-size: 22px;
   }
   
-  h1 {
+  /*h1 {
     font-style: italic;
     color: #373fff;
-    font-family: Roboto;
+  }*/
+
+  h1 {
+    font-size: 70px;
+    font-style: Bold;
+    color: #373fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .questions{
