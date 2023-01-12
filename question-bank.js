@@ -250,7 +250,7 @@ function q101(){
         "",
         "(a) How many fish enter the lake over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)? Give your answer to the nearest whole number.",
         "a_a",
-        "\\(\\int_0^ppp{E(t) \\text{ } dt} = \\int_0^ppp\\left(www0 + 15 \\sin\\left(\\pi t \\over 6\\right)\\right) dt\\) &nbsp; [1 point] <br> \\(\\int_0^ppp\\left.{E(t) \\text{ } dt} = www0x - {{ttt (15) \\cos\\left({\\pi x} \\over ttt\\right)} \\over \\pi}\\right\\rvert_0^ppp \\) <br> \\(= www0(ppp) - {{t_t \\cos\\left({ppp\\pi} \\over ttt\\right)} \\over \\pi} + {{t_t \\cos\\left(0\\right)} \\over \\pi} = e_e\\) &nbsp; [1 point] <br> To the nearest whole number, a_a fish enter the lake from midnight to ppp A.M."
+        "\\(\\int_0^ppp{E(t) \\text{ } dt} = \\int_0^ppp\\left(www0 + 15 \\sin\\left(\\pi t \\over ttt\\right)\\right) dt\\) &nbsp; [1 point] <br> \\(\\int_0^ppp\\left.{E(t) \\text{ } dt} = www0x - {{ttt (15) \\cos\\left({\\pi x} \\over ttt\\right)} \\over \\pi}\\right\\rvert_0^ppp \\) <br> \\(= www0(ppp) - {{t_t \\cos\\left({ppp\\pi} \\over ttt\\right)} \\over \\pi} + {{t_t \\cos\\left(0\\right)} \\over \\pi} = e_e\\) &nbsp; [1 point] <br> To the nearest whole number, a_a fish enter the lake from midnight to ppp A.M."
     );
     b.FixAnswerText = function() {
         b.t = b.Solve("ttt * 15");
@@ -280,13 +280,27 @@ function q101(){
         "0",
         ""
     ));
-    subQs.push(new SubQuestion(
+    d = new SubQuestion(
         "",
         "",
         "(d) Is the rate of change in the number of fish in the lake increasing or decreasing at ppp A.M. \\((t = ppp)\\)? Explain your reasoning.",
         "0",
-        ""
-    ));
+        "\\(E'(ppp) - L'(ppp) = e_e - (r_r) = a_a n_n 0 \\) &nbsp; [1 point] <br> Because \\(E'(ppp) - L'(ppp) n_n 0 \\), the rate of change in the number of fish is b_b at time \\((t = ppp)\\) &nbsp; [1 point]"
+    );
+    d.FixAnswerText = function() {
+        d.e = d.Solve("{2^{0.qqq * ppp} * log(2, 2.718) * 0.qqq}");
+        d.r = d.Solve("15 cos({\\pi ppp} \\over ttt) * \\pi / ttt");
+        console.log(d.j);
+        d.a = d.Solve("e_e - r_r");
+        d.n = "<";
+        d.b = "decreasing";
+        if (d.a > 0){
+            d.n = ">";
+            d.b = "increasing";
+        }
+        d.answer = d.b;
+    }
+    subQs.push(d);
     let a = new QuestionForm(
         1,
         "AP Calculus BC 2019 - Question 1",
