@@ -255,7 +255,7 @@ function UpdateAllQuestionText(){
         if (element.classList.contains("c")) i = 2;
         if (element.classList.contains("d")) i = 3;
         if (element.classList.contains("e")) i = 4;
-        if (currentQuestion.subQuestions.length > i) element.innerHTML = currentQuestion.subQuestions[i].question;
+        if (currentQuestion.subQuestions.length > i) element.innerHTML = currentQuestion.subQuestions[i].question + " <a href=\"areas.html\" class = \"hidden-link2\">(<u>Unit " + currentQuestion.subQuestions[i].unit + "</u>)<a>";
             //else document.getElementsByClassName("question")[index].innerHTML = "";
     }
 

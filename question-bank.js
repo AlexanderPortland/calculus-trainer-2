@@ -557,6 +557,8 @@ function q9(){
 
 //Largely finished
 questions.push(q101());
+questions.push(sixteenBCfour());
+questions.push(sixteenBCfive());
 
 
 //Working on
