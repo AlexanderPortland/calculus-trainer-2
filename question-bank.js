@@ -246,7 +246,7 @@ function q101(){
     //not finished yet
     subQs = new Array();
     b = new SubQuestion(
-        "",
+        "6.9",
         "",
         "(a) How many fish enter the lake over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)? Give your answer to the nearest whole number.",
         "a_a",
@@ -260,7 +260,7 @@ function q101(){
     }
     subQs.push(b);
     var complexQuestion = new SubQuestion(
-        "",
+        "8.1",
         "",
         "(b) What is the average number of fish that leave the lake per hour over the ppp-hour period from midnight \\((t = 0)\\) to ppp A.M. \\((t = ppp)\\)?",
         "e_e",
@@ -274,14 +274,14 @@ function q101(){
     }
     subQs.push(complexQuestion);
     subQs.push(new SubQuestion(
-        "",
+        "5.4",
         "",
         "(c) At what time \\(t\\) for \\(0 \\le t \\le jjj\\), is the greatest number of fish in the lake? Justify your answer.",
         "0",
         ""
     ));
     d = new SubQuestion(
-        "",
+        "5.3",
         "",
         "(d) Is the rate of change in the number of fish in the lake increasing or decreasing at ppp A.M. \\((t = ppp)\\)? Explain your reasoning.",
         "0",
