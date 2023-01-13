@@ -25,6 +25,11 @@
     text-decoration: none;
   }
 
+  .MathJax_Display { 
+    text-align: left !important;
+    display: inline !important;
+}
+
   .hidden-link:hover {
     color:rgb(73, 125, 255);
   }

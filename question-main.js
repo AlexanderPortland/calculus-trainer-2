@@ -1,3 +1,9 @@
+function randomFromVals(vals){
+    n = (Math.floor(Math.random() * vals.length));
+    return vals[n];
+}
+var basicFunctionNames = ["f", "g"]; //O
+var basicConstantNames = ["k", "c"]; //N
 
 class SubQuestion{
     constructor(_unit, _demand, _question, _answerFormula, _steps){
@@ -45,6 +51,9 @@ class SubQuestion{
         this.w = (Math.floor(Math.random() * 3) + 2);
         this.l = 2*(Math.floor(Math.random() * 3) + 1);
 
+        this.o = randomFromVals(basicFunctionNames);
+        this.n = randomFromVals(basicConstantNames);
+
         this.a = this.a.toString();
         this.b = this.b.toString();
         this.c = this.c.toString();
@@ -79,6 +88,8 @@ class SubQuestion{
         value = value.replace(/q_q/g,this.q);
         value = value.replace(/v_v/g,this.v);
         value = value.replace(/w_w/g,this.w);
+        value = value.replace(/o_o/g,this.o);
+        value = value.replace(/n_n/g,this.n);
         value = value.replace(/=>/g, "\\(\\rightarrow\\)");
         value = value.replace(/\+ -/g,"- ");
         value = value.replace(/\+-/g,"-");
@@ -236,6 +247,8 @@ class QuestionForm{
         this.q;
         this.r;
         this.w;
+        this.o;
+        this.n;
     }
 
 
@@ -267,8 +280,11 @@ class QuestionForm{
         this.t = (Math.floor(Math.random() * this.s) + 1);
         
         this.w = (Math.floor(Math.random() * 3) + 2);
-        this.i = (this.w-1);
-        this.j = (this.w-2);
+        this.i = (this.w - 1);
+        this.j = (this.w - 2);
+
+        this.o = randomFromVals(basicFunctionNames);
+        this.n = randomFromVals(basicConstantNames);
 
         this.a = this.a.toString();
         this.b = this.b.toString();
@@ -315,6 +331,8 @@ class QuestionForm{
         value = value.replace(/www/g,this.w);
         value = value.replace(/iii/g,this.i);
         value = value.replace(/jjj/g,this.j);
+        value = value.replace(/ooo/g,this.o);
+        value = value.replace(/nnn/g,this.n);
         value = value.replace(/=>/g, "\\(\\rightarrow\\)");
         value = value.replace(/\+ -/g,"- ");
         value = value.replace(/- \+/g,"- ");
@@ -398,3 +416,24 @@ class QuestionForm{
         return false;
     }
 }
+
+var allAreas = [
+    ["1.6", "Determining Limits", ""],
+    //["2.1", "Average Rate of Change", "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:functions/x2f8bb11595b61c86:average-rate-of-change/v/introduction-to-average-rate-of-change"],
+    ["2.9", "Complex Derivative Rules", ""],
+    ["3.2", "Implicit Differentiation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/implicit-differentiation-1"],
+    ["4.5", "Related Rates", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-4/v/rates-of-change-between-radius-and-area-of-circle"],
+    //["4.6", "Linear Approximation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-6/v/linear-approximation-example"],
+    ["4.7", "L'Hopital's Rule", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/introduction-to-l-hopital-s-rule"],
+    ["5.3", "Determining If Function Is Increasing", ""],
+    ["5.4", "Determining Local Extrema", "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-2/v/finding-critical-numbers"],
+    //["5.5", "Determining Global Extrema", ""],
+    ["6.9", "Integrating Using Substitution", ""],
+    ["7.5", "Euler's Method", "https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method"],
+    //["7.7", "Solving Differential Equations", "https://www.khanacademy.org/math/ap-calculus-ab/ab-differential-equations-new/ab-7-7/v/finding-constant-of-integration-rational"],
+    ["8.1", "Average Value", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-1/v/average-function-value-closed-interval"],
+    //["8.5", "Area Between Curves", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-4/v/area-between-curves"],
+    //["8.7", "Volumes with Cross Sections", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-7/v/volume-with-cross-sections-intro"],
+    ["8.9", "Volumes of Rotation", "https://www.khanacademy.org/math/ap-calculus-ab/ab-applications-of-integration-new/ab-8-9/v/disk-method-around-<var>x</var>-axis"],
+    //["10.11", "Taylor Polynomials", "https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new/bc-10-11/v/maclaurin-and-taylor-series-intuition"]
+];

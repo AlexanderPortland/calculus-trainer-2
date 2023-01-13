@@ -242,7 +242,7 @@ function q4(){
 }
 
 
-function q101(){
+function nineteenBCone(){
     //not finished yet
     subQs = new Array();
     b = new SubQuestion(
@@ -319,6 +319,58 @@ function q101(){
         a.q = (Math.floor(Math.random() * 4) + 1).toString();
     }
     return a;
+}
+
+function nineteenBCfive(){
+    //not finished yet
+    subQs = new Array();
+    a = new SubQuestion(
+        "2.9",
+        "",
+        "(a) Find the value of \\(nnn\\), for \\(nnn > 0\\) such that the slope of the line tangent to the graph of \\(ooo\\) at \\(x=0\\) equals b_b.",
+        "0",
+        `\\begin{align*} & f'(x) = {-\\left(-2x - aaa \\right) \\over {\\left(x^2 - aaax + nnn\\right)^2}} &&\\text{[2 points]} \\hspace{50cm} \\\\
+         & f'(0) = {aaa \\over nnn^2} = b_b \\rightarrow nnn^2 = {1 \\over t_t} \\rightarrow k = {1 \\over \\sqrt{t_t}} &&\\text{[1 point]} \\end{align*}`
+    );
+    a.FixAnswerText = function() {
+        a.b = a.Solve("q_q * aaa");
+        a.t = a.Solve("b_b / aaa");
+    }
+    subQs.push(a);
+
+    c = new SubQuestion(
+        "1.6",
+        "",
+        "(c) For \\(nnn = b_b\\), find the value of \\(\\int_0^{t_t}{f(x) \\>dx}\\) or show that it diverges.",
+        "0",
+        `\\begin{align*}\\int_0^{t_t}{{1 \\over {x^2 - aaax + b_b}}} \\>dx & = \\int_0^{t_t}{{1 \\over \\left(x - iii\\right)^2}} \\>dx  \\\\ 
+        & = \\int_0^{iii}{{1 \\over \\left(x - iii\\right)^2}} \\>dx + \\int_iii^{t_t}{{1 \\over \\left(x - iii\\right)^2}} \\>dx &&\\text{[1 point]} \\hspace{50cm} \\\\ 
+        & = \\lim_{b\\to iii^-}\\int_0^{b}{{1 \\over \\left(x - iii\\right)^2}} \\>dx + \\lim_{b\\to iii^+}\\int_b^{t_t}{{1 \\over \\left(x - iii\\right)^2}} \\>dx\\end{align*}`
+    );
+    c.FixAnswerText = function() {
+        c.b = c.Solve("iii * iii");
+        min = c.Solve("iii") + 1;
+        c.t = (min + (Math.floor(Math.random() * 5) + min)).toString();
+    }
+    subQs.push(c);
+    let f = new QuestionForm(
+        1,
+        "AP Calculus BC 2019 - Question 5",
+        false,
+        "Geometry",
+        "Consider the family of functions \\(ooo(x) = {1 \\over {x^2 - aaax + nnn}}\\), where \\(nnn\\) is a constant.",
+        null,
+        subQs,
+        ""
+    );
+    f.FixAnswerText = function (){
+        f.i = (Math.floor(Math.random() * 5) + 1);
+        f.a = (parseInt(f.i) * 2).toString();
+        console.log(f.i + "i");
+        console.log(f.a + "a");
+        //f.b = (parseInt(a.a) * parseInt(a.q)).toString();
+    }
+    return f;
 }
 
 function q5(){
@@ -551,11 +603,12 @@ function q9(){
 }
 
 //Completely finished
-questions.push(sixteenBCfive());
+//questions.push(sixteenBCfive());
 
 //Mostly finished
-questions.push(q101());
-questions.push(sixteenBCfour());
+//questions.push(nineteenBCone());
+questions.push(nineteenBCfive());
+//questions.push(sixteenBCfour());
 
 
 //Working on
