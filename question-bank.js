@@ -8,21 +8,31 @@ function sixteenBCfive(){
         null,
         "(a) Find the average value of the radius of the funnel.",
         "{{qqq \\over {ccc}} + {aaa^2 \\over {3*ccc}}}",
-        "average value = \\({1 \\over {b-a}} \\times \\int_a^b{f(h) \\>dh}\\) <br>\\( = {1 \\over {aaa-0}} \\times \\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right) \\>dh} \\) &nbsp; [1 point] <br>\\( = {{1 \\over aaa} \\times {1 \\over ccc}} \\times \\int_0^aaa{(qqq + h^2) \\>dh} \\) <br>\\( = {1\\over aaa \\times ccc} \\left[qqq(h) + {{(h)^3}\\over 3}\\right]_0^aaa\\) &nbsp; [1 point] <br> \\(= {1\\over aaa \\times ccc} \\left(qqq(aaa) + {{(aaa)^3}\\over 3}\\right) = finalAnswer\\) in &nbsp; [1 point]"
+        `\\begin{align*} \\text{average value } & = {1 \\over {b-a}} \\times \\int_a^b{f(h) \\>dh} \\\\
+        & = {1 \\over {aaa-0}} \\times \\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right) \\>dh} &&\\text{[1 point]} \\hspace{50cm} \\\\
+        & = {{1 \\over aaa} \\times {1 \\over ccc}} \\times \\int_0^aaa{(qqq + h^2) \\>dh} \\\\
+        & = {1\\over aaa \\times ccc} \\left[qqq(h) + {{(h)^3}\\over 3}\\right]_0^aaa &&\\text{[1 point]} \\\\
+        & = {1\\over aaa \\times ccc} \\left(qqq(aaa) + {{(aaa)^3}\\over 3}\\right) = finalAnswer &&\\text{[1 point]} \\end{align*}`
     ));
     subQs.push(new SubQuestion(
         "8.9",
         null,
         "(b) Find the volume of the funnel.",
         "{\\pi \\over ccc^2} * ((aaa * qqq^2) + {aaa^5 \\over 5} + {{2*qqq*aaa^3} \\over 3})",
-        "volume = \\(\\int_0^h{A(h) \\>dh}\\) <br> = \\(\\int_0^aaa{\\left(\\pi R(h)^2\\right) \\>dh}\\) <br> = \\(\\pi\\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right)^2 \\>dh}\\) &nbsp; [1 point] <br> = \\({\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq + h^2}\\right)^2 \\>dh}\\) <br> = \\({\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq^2 + 2(qqq)h^2 + h^4}\\right) \\>dh}\\) <br> = \\({\\pi \\over{ccc^2}} \\left[{qqq^2h + {2(qqq)h^3\\over3} + {h^5\\over5}}\\right]_0^aaa\\) &nbsp; [1 point] <br> = \\({\\pi \\over{ccc^2}} \\left({qqq^2(aaa) + {2(qqq)(aaa)^3\\over3} + {(aaa)^5\\over5}}\\right) = finalBnswer\\) inches\\(^3\\) &nbsp; [1 point]"
+        `\\begin{align*} \\text{volume } & = \\int_0^h{A(h) \\>dh} = \\int_0^aaa{\\left(\\pi R(h)^2\\right) \\>dh} \\\\
+        & = \\pi\\int_0^aaa{\\left({{qqq + h^2} \\over ccc}\\right)^2 \\>dh} &&\\text{[1 point]} \\hspace{50cm} \\\\
+        & = {\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq + h^2}\\right)^2 \\>dh} \\\\
+        & = {\\pi \\over{ccc^2}} \\int_0^aaa{\\left({qqq^2 + 2(qqq)h^2 + h^4}\\right) \\>dh} \\\\
+        & = {\\pi \\over{ccc^2}} \\left[{qqq^2h + {2(qqq)h^3\\over3} + {h^5\\over5}}\\right]_0^aaa &&\\text{[1 point]} \\\\
+        & = {\\pi \\over{ccc^2}} \\left({qqq^2(aaa) + {2(qqq)(aaa)^3\\over3} + {(aaa)^5\\over5}}\\right) = finalBnswer \\text{ inches}^3 &&\\text{[1 point]} \\end{align*}`
     ));
     subQs.push(new SubQuestion(
         "4.5",
         "The funnel contains a liquid that is draining from the bottom. at the instant when the liquid is \\(h = d_d \\) inches, the radius of the surface of the liquid is decreasing at a rate of \\(1 \\over eee \\) inch per second.",
         "(c) At this instant, what is the rate of change of the height of the liquid with respect to time?",
         "{-ccc \\over {2 (eee \\times d_d)}}",
-        "\\({dr \\over dt} = {2h\\overccc} \\left({dh\\over dt}\\right)\\rightarrow {dh \\over dt} = \\left({dr\\over dt}\\right){ccc\\over2h}\\) &nbsp; [2 points] <br> = \\(\\left(-1 \\over eee\\right){ccc\\over2(d_d)}\\) = \\(finalCnswer \\) in/sec &nbsp; [1 point]"
+        `\\begin{align*} {dr \\over dt} = {2h\\overccc} \\left({dh\\over dt}\\right)\\rightarrow {dh \\over dt} & = \\left({dr\\over dt}\\right){ccc\\over2h} &&\\text{[2 points]} \\hspace{50cm} \\\\
+        & = \\left(-1 \\over eee\\right){ccc\\over2(d_d)} = finalCnswer \\text{ in/sec} &&\\text{[1 point]} \\end{align*}`
     ));
     let a = new QuestionForm(
         1, 
@@ -606,11 +616,11 @@ function q9(){
 }
 
 //Completely finished
-//questions.push(sixteenBCfive());
+questions.push(sixteenBCfive());
 
 //Mostly finished
 //questions.push(nineteenBCone());
-questions.push(nineteenBCfive());
+//questions.push(nineteenBCfive());
 //questions.push(sixteenBCfour());
 
 
