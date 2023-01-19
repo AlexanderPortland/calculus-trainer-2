@@ -305,7 +305,7 @@ function UpdateAllFormula(){
 
 function CheckAnswer(proposed, question){
     if (question.answer != undefined){
-        if (question.answer == "") return true;
+        //if (question.answer == "") return true;
         if (proposed == "") return false;
         if (question.answer.includes(proposed)) {
             return true;

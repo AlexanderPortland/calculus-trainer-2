@@ -338,13 +338,14 @@ function nineteenBCfive(){
         "2.9",
         "",
         "(a) Find the value of \\(nnn\\), for \\(nnn > 0\\) such that the slope of the line tangent to the graph of \\(ooo\\) at \\(x=0\\) equals b_b.",
-        "0",
+        "w_w",
         `\\begin{align*} & f'(x) = {-\\left(-2x - aaa \\right) \\over {\\left(x^2 - aaax + nnn\\right)^2}} &&\\text{[2 points]} \\hspace{50cm} \\\\
-         & f'(0) = {aaa \\over nnn^2} = b_b \\rightarrow nnn^2 = {1 \\over t_t} \\rightarrow nnn = {1 \\over \\sqrt{t_t}} &&\\text{[1 point]} \\end{align*}`
+         & f'(0) = {aaa \\over nnn^2} = b_b \\rightarrow nnn^2 = {1 \\over t_t} \\rightarrow nnn = {1 \\over \\sqrt{t_t}} = w_w &&\\text{[1 point]} \\end{align*}`
     );
     a.FixAnswerText = function() {
         a.b = a.Solve("q_q * aaa");
         a.t = a.Solve("b_b / aaa");
+        a.w = a.Solve("{1 \\over \\sqrt{t_t}}");
     }
     subQs.push(a);
 
@@ -358,12 +359,13 @@ function nineteenBCfive(){
         & = \\lim_{b\\to iii^-}\\int_0^{b}{{1 \\over \\left(x - iii\\right)^2}} \\>dx + \\lim_{b\\to iii^+}\\int_b^{t_t}{{1 \\over \\left(x - iii\\right)^2}} \\>dx &&\\text{[1 point]} \\hspace{50cm} \\\\
         & = \\lim_{b\\to iii^-}\\left(\\left.- {1 \\over x - iii} \\right\\rvert_{x=0}^{x=b}\\right) + \\lim_{b\\to iii^+}\\left(\\left.- {1 \\over x - iii} \\right\\rvert_{x=b}^{x=t_t}\\right) &&\\text{[1 point]} \\hspace{50cm} \\\\
         & = \\lim_{b\\to iii^-}\\left(- {1 \\over b - iii} - 1\\right) + \\lim_{b\\to iii^+}\\left(-1 + {1 \\over b - iii}\\right) \\end{align*}
-        \\begin{align*}\\text{Because } \\lim_{b\\to iii^-}\\left(- {1 \\over b - iii}\\right) \\text{ does not exist, the interval diverges.} &&\\text{[1 point]} \\hspace{50cm} \\end{align*}`
+        \\begin{align*}\\text{Because } \\lim_{b\\to iii^-}\\left(- {1 \\over b - iii}\\right) \\text{ does not exist, the interval } \\textbf{diverges} \\text{.} &&\\text{[1 point]} \\hspace{50cm} \\end{align*}`
     );
     c.FixAnswerText = function() {
         c.b = c.Solve("iii * iii");
         min = c.Solve("iii") + 1;
         c.t = (min + (Math.floor(Math.random() * 5) + min)).toString();
+        c.answer = "diverges";
     }
     subQs.push(c);
     let f = new QuestionForm(
